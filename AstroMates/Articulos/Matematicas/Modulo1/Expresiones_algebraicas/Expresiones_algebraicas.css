@@ -1,0 +1,147 @@
+/* =========================================================
+   TARJETA EVALUADORA INTERACTIVA DE EXPRESSIONES
+   ========================================================= */
+
+.evaluator-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #2563eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.evaluator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.evaluator-label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.expression-badge {
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+}
+
+.evaluator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.input-help {
+    color: #64748b;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    align-self: center;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* CAJA DE RESULTADOS Y PASOS */
+.result-box {
+    margin-top: 1.5rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.result-badge {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+}
+
+.steps-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+}
+
+.step-card {
+    background-color: #ffffff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.step-highlight {
+    background-color: #eff6ff;
+    border-left-color: #2563eb;
+}

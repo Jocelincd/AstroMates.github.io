@@ -1,0 +1,249 @@
+/* =========================================================
+   ASTROMATES — CABECERA, NAVEGACIÓN Y FOOTER
+   ========================================================= */
+
+/* 1. RESET Y BASE GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f7f9fc;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* 2. CABECERA Y ESTRUCTURA DE NAVEGACIÓN */
+.header-top,
+.header-container,
+#main-header,
+.navbar,
+.nav-list,
+.nav-item {
+    overflow: visible !important;
+}
+
+.header-top {
+    width: 100%;
+    background-color: #0b0f19;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* CORRECCIÓN DE LA IMAGEN DEL LOGO */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    max-height: 50px;
+}
+
+.header-logo,
+.logo-link img {
+    max-height: 45px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    object-fit: contain;
+    display: block;
+}
+
+#main-header {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a.active-btn {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    border-radius: 9999px;
+    padding: 0.6rem 1.3rem;
+    color: #ffffff !important;
+    font-weight: 800;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.nav-item a.active-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+}
+
+/* 3. MENÚ DESPLEGABLE — NIVEL 1 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 290px;
+    margin-top: 5px;
+    padding: 0.6rem 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    list-style: none;
+    z-index: 99999 !important;
+}
+
+.nav-item:hover > .dropdown-menu {
+    display: block !important;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-item > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover > a {
+    background-color: #f1f5f9;
+    color: #0284c7;
+    padding-left: 1.5rem;
+}
+
+/* 4. SUBMENÚ — NIVEL 2 */
+.submenu {
+    display: none;
+    position: absolute;
+    top: -5px;
+    left: 100%;
+    min-width: 290px;
+    margin-left: 5px;
+    padding: 0.5rem 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    list-style: none;
+    z-index: 100000 !important;
+}
+
+.dropdown-item:hover > .submenu {
+    display: block !important;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.nav-item:nth-child(n+4) .submenu {
+    left: auto !important;
+    right: 100% !important;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.nav-item:last-child .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.submenu-header {
+    padding: 0.75rem 1.25rem 0.35rem;
+    background-color: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0284c7;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.submenu-header:first-child {
+    border-top: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.55rem 1.25rem 0.55rem 1.5rem;
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.submenu li a:hover {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.link-disabled {
+    color: #94a3b8 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.submenu li a.link-disabled {
+    font-weight: 400;
+}
+
+.submenu li a.link-disabled:hover {
+    background-color: transparent;
+    color: #94a3b8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5. FOOTER */
+.site-footer {
+    background-color: #090c28;
+    color: #a0aec0;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+/* 6. RESPONSIVE DE NAVEGACIÓN */
+@media (max-width: 900px) {
+    .submenu {
+        position: relative;
+        left: 0;
+        box-shadow: none;
+    }
+}

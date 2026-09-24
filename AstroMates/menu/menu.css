@@ -1,0 +1,418 @@
+/* AJUSTES CABECERA Y VISIBILIDAD DE MENÚS */
+        .header-top, 
+        .header-container, 
+        .navbar, 
+        .nav-list, 
+        .nav-item {
+            overflow: visible !important;
+        }
+
+        .header-top {
+            width: 100%;
+            background-color: #0b0f19;
+            padding: 12px 20px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .dropdown-menu {
+            z-index: 9999 !important;
+        }
+
+        .submenu {
+            z-index: 10000 !important;
+        }
+
+        .link-disabled {
+            color: #94a3b8 !important;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+/* =========================================================
+   ESTILOS PARA EL MENÚ DE NAVEGACIÓN Y DESPLEGABLES (NAVBAR)
+   ========================================================= */
+
+/* Corrección de alineación del Header */
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #0b0f19; /* Tono espacio oscuro */
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center; /* Mantiene todos los <li> alineados verticalmente */
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item > a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+/* Botón estilo pildora para "Inicio" */
+.nav-item a.active-btn {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Niveles Desplegables */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 0 8px 8px 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+}
+
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item > a {
+  color: #1e293b;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.dropdown-item:hover > a {
+  background-color: #f1f5f9;
+  color: #0284c7;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #ffffff;
+  min-width: 320px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1001;
+  border: 1px solid #e2e8f0;
+}
+
+.dropdown-item:hover > .submenu {
+  display: block;
+}
+
+.submenu-header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 0.5rem 1.25rem 0.25rem 1.25rem;
+  text-transform: uppercase;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.submenu li a {
+  color: #475569;
+  padding: 0.45rem 1.25rem 0.45rem 1.75rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.submenu li a:hover {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.link-disabled {
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+.link-disabled::after {
+  content: " (Próximamente)";
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* ---------------------------------------------------------
+   NIVEL 1: Menú Desplegable Principal (Módulos)
+   --------------------------------------------------------- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 8px 8px 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+}
+
+/* Muestra el menú al pasar el cursor sobre Matemáticas */
+.nav-item:hover > .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item {
+  position: relative; /* Base para el submenú de nivel 2 */
+}
+
+.dropdown-item > a {
+  color: #334155;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover > a {
+  background-color: #f1f5f9;
+  color: #0284c7;
+}
+
+/* ---------------------------------------------------------
+   NIVEL 2: Sub-desplegable Lateral (Temas y Subtemas)
+   --------------------------------------------------------- */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Despliega hacia la derecha */
+  background: #ffffff;
+  min-width: 320px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1001;
+  border: 1px solid #e2e8f0;
+}
+
+/* Muestra los temas/subtemas al pasar el cursor por cada módulo */
+.dropdown-item:hover > .submenu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+/* Posicionamiento base del primer desplegable (Módulos) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Submenús de Nivel 2 y 3 (Temas y Subtemas) */
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Por defecto abre a la derecha */
+    min-width: 280px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+/* Para FÍSICA y CURIOSIDADES: hacer que abran hacia la IZQUIERDA sin solaparse */
+.nav-item:nth-child(n+4) .submenu {
+    left: auto !important;
+    right: 100% !important; /* Lo saca completamente hacia la izquierda del menú actual */
+    margin-right: 5px; /* Un pequeño margen para que no toque el borde */
+}
+
+/* Alineación limpia del menú Curiosidades a la derecha del botón */
+.nav-item:last-child .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+}
+
+/* Cabecera del tema dentro del submenú */
+.submenu-header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 0.6rem 1.25rem 0.3rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.submenu-header:first-child {
+  border-top: none;
+}
+
+.submenu li a {
+  color: #475569;
+  padding: 0.5rem 1.25rem 0.5rem 1.75rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.submenu li a:hover {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   Estilo para Páginas Pendientes/No Creadas (link: null)
+   --------------------------------------------------------- */
+.link-disabled {
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.link-disabled:hover {
+  background-color: transparent !important;
+}
+
+.link-disabled::after {
+  content: " (Próximamente)";
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* Animación suave al desplegar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* FORZAR VISIBILIDAD DE MENÚS Y CAPAS */
+.header-top,
+.header-container,
+#main-header,
+.navbar,
+.nav-list,
+.nav-item {
+    overflow: visible !important;
+}
+
+.dropdown-menu {
+    z-index: 9999 !important;
+}
+
+.submenu {
+    z-index: 10000 !important;
+}
+
+.link-disabled {
+    color: #94a3b8 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+/* Quita el fondo de tarjeta gigante y deja solo la barra */
+.header-top {
+    width: 100%;
+    background-color: #0b0f19; /* Fondo oscuro limpio de la barra */
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tamaño del logo pequeño de la esquina */
+.header-logo {
+    height: 45px;
+    width: auto;
+}
+
+/* Alineación horizontal de los enlaces */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}

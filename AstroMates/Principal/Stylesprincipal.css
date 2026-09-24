@@ -1,0 +1,707 @@
+/* RESET & REGLAS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f7e8f3;
+    color: #2d3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+/* Incrementa la altura mínima del contenedor para que quepan todos los módulos hacia abajo */
+.card-container, 
+.hero-card,
+.main-card {
+    min-height: 800px !important; /* Aumenta este valor (ej. de 500px a 650px u 800px) */
+    padding-bottom: 4rem;
+    overflow: visible !important; /* Asegura que no recorte nada en los bordes */
+}
+
+/* 1. SECCIÓN HERO (ENCABEZADO ESPACIAL) */
+.hero-section {
+    background: linear-gradient(180deg, #090c28 0%, #111746 50%, #0d1238 100%);
+    border-radius: 20px;
+    padding: 25px 30px 50px 30px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* Fondo Estelar Ampliado */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 230px 190px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 300px 60px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 380px 210px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 420px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 450px 150px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 520px 240px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 600px 80px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 670px 170px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 720px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 750px 180px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 810px 110px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 850px 50px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 880px 220px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    opacity: 0.95;
+}
+
+/* Planetas Decorativos */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.planet-1 {
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, #5b86e5, #36d1dc);
+    top: 20px; left: 60px;
+    box-shadow: inset -10px -10px 15px rgba(0,0,0,0.4);
+}
+
+.planet-2 {
+    width: 100px; height: 100px;
+    background: radial-gradient(circle, #4facfe, #00f2fe);
+    bottom: -20px; left: -20px;
+    box-shadow: inset -15px -15px 20px rgba(0,0,0,0.5);
+}
+
+.planet-3 {
+    width: 70px; height: 70px;
+    background: radial-gradient(circle, #ff9a9e, #fecfef);
+    bottom: 30px; right: 40px;
+    box-shadow: inset -10px -10px 15px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
+   ESTILOS PARA EL MENÚ DE NAVEGACIÓN Y DESPLEGABLES (NAVBAR)
+   ========================================================= */
+
+/* Corrección de alineación del Header */
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #0b0f19; /* Tono espacio oscuro */
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center; /* Mantiene todos los <li> alineados verticalmente */
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item > a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+/* Botón estilo pildora para "Inicio" */
+.nav-item a.active-btn {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Niveles Desplegables */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 0 8px 8px 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+}
+
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item > a {
+  color: #1e293b;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.dropdown-item:hover > a {
+  background-color: #f1f5f9;
+  color: #0284c7;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #ffffff;
+  min-width: 320px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1001;
+  border: 1px solid #e2e8f0;
+}
+
+.dropdown-item:hover > .submenu {
+  display: block;
+}
+
+.submenu-header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 0.5rem 1.25rem 0.25rem 1.25rem;
+  text-transform: uppercase;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.submenu li a {
+  color: #475569;
+  padding: 0.45rem 1.25rem 0.45rem 1.75rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.submenu li a:hover {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.link-disabled {
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+.link-disabled::after {
+  content: " (Próximamente)";
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* ---------------------------------------------------------
+   NIVEL 1: Menú Desplegable Principal (Módulos)
+   --------------------------------------------------------- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 8px 8px 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+}
+
+/* Muestra el menú al pasar el cursor sobre Matemáticas */
+.nav-item:hover > .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item {
+  position: relative; /* Base para el submenú de nivel 2 */
+}
+
+.dropdown-item > a {
+  color: #334155;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover > a {
+  background-color: #f1f5f9;
+  color: #0284c7;
+}
+
+/* ---------------------------------------------------------
+   NIVEL 2: Sub-desplegable Lateral (Temas y Subtemas)
+   --------------------------------------------------------- */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Despliega hacia la derecha */
+  background: #ffffff;
+  min-width: 320px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1001;
+  border: 1px solid #e2e8f0;
+}
+
+/* Muestra los temas/subtemas al pasar el cursor por cada módulo */
+.dropdown-item:hover > .submenu {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+/* Posicionamiento base del primer desplegable (Módulos) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Submenús de Nivel 2 y 3 (Temas y Subtemas) */
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Por defecto abre a la derecha */
+    min-width: 280px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+/* Para FÍSICA y CURIOSIDADES: hacer que abran hacia la IZQUIERDA sin solaparse */
+.nav-item:nth-child(n+4) .submenu {
+    left: auto !important;
+    right: 100% !important; /* Lo saca completamente hacia la izquierda del menú actual */
+    margin-right: 5px; /* Un pequeño margen para que no toque el borde */
+}
+
+/* Alineación limpia del menú Curiosidades a la derecha del botón */
+.nav-item:last-child .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+}
+
+/* Cabecera del tema dentro del submenú */
+.submenu-header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 0.6rem 1.25rem 0.3rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.submenu-header:first-child {
+  border-top: none;
+}
+
+.submenu li a {
+  color: #475569;
+  padding: 0.5rem 1.25rem 0.5rem 1.75rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.submenu li a:hover {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   Estilo para Páginas Pendientes/No Creadas (link: null)
+   --------------------------------------------------------- */
+.link-disabled {
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.link-disabled:hover {
+  background-color: transparent !important;
+}
+
+.link-disabled::after {
+  content: " (Próximamente)";
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* Animación suave al desplegar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Área del Logo con Imagen */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrapper {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.logo-image {
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.4));
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.03);
+}
+
+/* Botón Principal */
+.btn-primary {
+    background-color: #ffffff;
+    color: #111746;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa;
+}
+
+/* 2. SECCIÓN DE PRESENTACIÓN E INFORMACIÓN */
+.info-section {
+    background-color: #f8f6fd;
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    background-image: radial-gradient(#e2d9f3 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Presentación Formal */
+.intro-block {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #e2d9f3;
+}
+
+.intro-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 12px;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5568;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+/* Grilla de Tarjetas */
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+main {
+    overflow: visible !important; /* ¡CLAVE! Permite que los submenús floten fuera del marco */
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.info-card.center-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.info-icon {
+    font-size: 3.2rem;
+    min-width: 85px;
+    height: 85px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    border: 2px solid #ede7f6;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.08);
+}
+
+.info-text h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.15rem;
+    color: #1a202c;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.info-text p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* 3. SECCIÓN METODOLÓGICA */
+.process-section {
+    background-color: #0b1026;
+    border-radius: 20px;
+    padding: 40px 30px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.process-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 35px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-card {
+    background-color: #ffffff;
+    color: #2d3748;
+    border-radius: 15px;
+    padding: 30px 20px 20px 20px;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-icon {
+    position: absolute;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.step-card:nth-child(1) .step-icon { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+.step-card:nth-child(3) .step-icon { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+.step-card:nth-child(5) .step-icon { background: linear-gradient(135deg, #ff0844, #ffb199); }
+
+.step-card p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.arrow {
+    font-size: 1.3rem;
+    color: #ffb800;
+    font-weight: bold;
+}
+/* ========================================================
+   1. CORRECCIÓN DEL ENCABEZADO Y ESPACIADO DEL LOGO
+   ======================================================== */
+
+/* Contenedor de la presentación inicial */
+.intro-container, 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem; /* Otorga separación automática entre logo y texto */
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+/* Título de bienvenida */
+.hero-content h1,
+.intro-title {
+    font-size: 2rem;
+    color: #1e293b;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Imagen del logo central */
+.hero-content img,
+.logo-central {
+    position: relative !important; /* Elimina position: absolute si lo tenía */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important; /* Centra el logo sin encimarse al texto */
+    max-width: 280px;
+    height: auto;
+    display: block;
+    z-index: 2;
+}
+
+/* Parrafo descriptivo debajo del logo */
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #475569;
+}
+
+
+/* ========================================================
+   2. CORRECCIÓN DE LAS ESFERAS Y BARRA DE NAVEGACIÓN
+   ======================================================== */
+
+/* Contenedor de la barra negra superior */
+header,
+.navbar-container {
+    position: relative !important; /* Base de posicionamiento para elementos internos */
+    overflow: visible !important;   /* Recorta cualquier adorno que se salga de la tarjeta */
+    border-radius: 16px 16px 0 0;
+}
+
+/* Esferas decorativas ajustadas a las esquinas internas */
+.planet-top-left,
+.decorative-sphere-left {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none; /* Evita que la esfera bloquee los clics en los botones */
+}
+
+/* Asegurar que el menú esté por encima de las esferas decorativas */
+.nav-list {
+    position: relative;
+    z-index: 10;
+}

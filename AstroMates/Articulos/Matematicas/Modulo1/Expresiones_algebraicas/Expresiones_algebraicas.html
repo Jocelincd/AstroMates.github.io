@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones algebraicas - AstroMates</title>
+    
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Hojas de estilos base -->
+    <link rel="stylesheet" href="../../Styles.css"> <!--Modifica el estilo del menú, lo hace igual al que el principal-->
+    <link rel="stylesheet" href="Expresiones_algebraicas.css">
+    <link rel="stylesheet" href="../../../../menu/header_footer.css">
+    <link rel="stylesheet" href="../../../Global/article_global.css">
+    <link rel="stylesheet" href="../../../../menu/menu.css">
+    
+    
+    <script src="Scriptsexpresiones_algebraicas.js" defer></script>
+
+    <!-- Configuración y carga de MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+
+    <!-- CABECERA DE NAVEGACIÓN -->
+    <header class="header-top">
+        <div class="header-container">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../CSSelements/logo.png" alt="AstroMates Logo" class="header-logo">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../../../../Principal/index.html" class="active-btn">Inicio</a></li>
+                    <li class="nav-item"><a href="../../../../Principal/index.html#astromates">AstroMates</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#">Matemáticas ▼</a>
+                        <ul class="dropdown-menu" id="menu-matematicas"></ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#">Física ▼</a>
+                        <ul class="dropdown-menu" id="menu-fisica"></ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">Curiosidades ▼</a>
+                        <ul class="dropdown-menu" id="menu-curiosidades"></ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TÍTULO PRINCIPAL DE LA LECCIÓN -->
+    <section class="banner-title">
+        <h1>Expresiones alegebráicas: <br><span>¿Números y letras?</span></h1>
+    </section>
+
+    <!-- ESTRUCTURA PRINCIPAL DE 3 COLUMNAS -->
+    <div class="page-layout">
+        
+        <!-- COLUMNA IZQUIERDA: SOBRE NOSOTROS -->
+        <aside class="sidebar-left">
+            <div class="widget author-box">
+                <h3>Sobre Nosotros</h3>
+                <div class="avatar-circle">
+                    <span class="avatar-icon">👩‍🚀</span>
+                </div>
+                <p class="author-desc">
+                    ¡Hola! Somos el equipo de AstroMates. Transformamos la física y las matemáticas en conceptos claros, intuitivos e interactivos para acompañarte en tu aprendizaje.
+                </p>
+            </div>
+        </aside>
+
+        <!-- COLUMNA CENTRAL: CONTENIDO EDUCATIVO -->
+        <main class="main-content">
+            
+            <article class="lesson-article">
+                <section class="intro-paragraph">
+                    <h2>El abecedario y los números...</h2>
+                    <p>
+                        Muchos estudiantes empiezan a asustarse cuando llegan a esta parte. 
+                        “¿Por qué si solo contamos con números, debemos incluir letras?” 
+                        “¿Quién rayos decidió mezclar el abecedario con los números?”. 
+                        Sin embargo, cuando realmente entiendes lo que este tipo de sintaxis 
+                        matemática representa, comprendes su funcionalidad y practicidad. 
+                        Recuerda:<strong> la matemática surge de la necesidad.</strong>
+                    </p>
+
+                    <p>
+                        Las expresiones algebráicas no son más que un lenguaje para relacionar 
+                        expresiones numéricas. Para manipularlas sin cometer errores, no basta 
+                        con memorizar reglas: hay que comprender la lógica de los objetos 
+                        algebraicos y las leyes fundamentales de la aritmética que las gobiernan.              </p>
+                </section>
+
+                <!-- NÚMEROS NATURALES -->
+                <section class="number-section">
+                    <div class="section-text">
+                        <h3>La lógica de los términos semejantes.</h3>
+                        <p>
+                            Antes de manipular expresiones alegebráicas, hay que comprender qué son y qué representan: 
+                            Un <strong>término algebraico</strong> representa una cantidad compuesta por un <strong>coeficiente</strong>
+                            (número) y una <strong>literal</strong>  (variables con sus respectivos exponentes).
+                            <br><br>
+                            ¿Pero, y eso qué quiere decir?
+                            Imagina que la señora de la cafetería quiere saber cuántos nuggets de pollo le 
+                            corresponden a cada estudiante. Su compañera le dice: “Para saberlo, necesitas 
+                            preguntarle al estudiante su edad, multiplicarla por 2 y restarle 1”.                            <br><br>
+                            <br><br>
+                            Ella, pensando en que son más de 500 estudiantes, quiere hacer un pequeño 
+                            “programa” para poder saberlo simplemente introduciendo la edad, sin tener 
+                            que hacer todo en su cabeza.
+                            <br> Ella piensa: “¿Cómo puedo representar eso de multiplicar por 2 y restarle 1?”.
+                            Aquí aparece un problema: la edad es una cantidad que cambia<strong>según el estudiante.</strong><br>
+                            No podemos escribir directamente un número porque estaríamos describiendo únicamente 
+                            a un estudiante concreto.
+                            <p><br>
+        Si un estudiante tiene 10 años, podríamos escribir: \(2(10) - 1 = 19\). 
+        Pero si llega otro estudiante de 13 años, esa expresión ya no nos sirve 
+        como representación general, porque tendríamos que volver a cambiar el número: \(2(13) - 1 = 25\).
+    </p><br>
+    <p>
+        Por eso necesitamos una forma de representar un valor que todavía 
+        no conocemos o que puede cambiar. Aquí es donde aparecen las 
+        <strong>variables</strong>. Podemos representar la edad mediante la letra \(x\).
+    </p><br>
+    <p>
+        Así, la expresión \(2x - 1\) ya no describe únicamente a un estudiante. 
+        Describe una regla general: <em>«toma cualquier valor que represente la edad,
+             multiplícalo por 2 y réstale 1»</em>, dado que la variable \(x\) es cambiante 
+             y representa "cualquier valor".
+    </p>
+<br>
+    <blockquote class="math-box highlight">
+        Si \(x = 10 \longrightarrow 2(10) - 1 = 19\)<br>
+        Si \(x = 13 \longrightarrow 2(13) - 1 = 25\) ¡Funciona!
+    </blockquote>
+<br>
+    <p>
+        La letra \(x\) funciona como un espacio reservado para un valor que puede variar.
+    </p>
+
+    <p>
+        Repasemos: ahora que tenemos una expresión algebraica, podemos volver a la definición 
+        clave: un <strong>término algebraico</strong> consta de un <em>coeficiente</em> (número) 
+        y una <em>parte literal</em> (variable).
+    </p><br>
+
+    <p>
+        En la expresión \(2x - 1\), el término algebraico principal es \(2x\), donde:
+    </p><br>
+
+    <ul class="algebra-structure-list">
+        <li><strong>\(2\)</strong> \(\rightarrow\) Coeficiente (número).</li>
+        <li><strong>\(x\)</strong> \(\rightarrow\) Parte literal o variable.</li>
+    </ul><br>
+
+    <p>
+        Una variable sola como \(x\) también es un término algebraico completo. Su coeficiente es \(1\) (es decir, \(1x\)), pero no se escribe porque el 1 es el <strong>elemento neutro de la multiplicación</strong>, tal como vimos en el capítulo anterior.
+    </p>
+
+    <div class="highlight-text-box">
+        <strong>Nota:</strong> La variable \(x\) podría ser cualquier letra del abecedario (\(a, b, y, z\dots\)). Con cualquier letra podemos construir una expresión algebraica.
+    </div>
+                    </div>
+                </section>
+                <section class="card-style">
+  <h2 class="section-title">¡Probemos juntos! 🚀</h2>
+  <p class="section-subtext">
+    Una variable (como la <strong>x</strong>) es un contenedor cuyo valor puede cambiar. 
+    Ingresa una expresión algebraica, asigna diferentes valores a <strong>x</strong> y observa cómo se evalúa el resultado paso a paso.
+  </p>
+
+  <div class="evaluator-card">
+    <div class="evaluator-header">
+        <span class="evaluator-label">Expresión Algebraica:</span>
+        <div class="expression-badge">\(2x - 1\)</div>
+    </div>
+
+    <div class="evaluator-form">
+        <label for="xValueInput" class="input-label">Ingresa el valor de \(x\) a probar:</label>
+        <input type="number" id="xValueInput" class="input-field" placeholder="Ej: 10" value="10">
+        <small class="input-help">Puedes ingresar números enteros o decimales (positivos o negativos).</small>
+
+        <button type="button" id="btnEvaluate" class="btn-primary">
+            ⚡ ¡Evaluar! 
+        </button>
+    </div>
+
+    <!-- Carga de Resultados -->
+    <div id="evalResultBox" class="result-box" style="display: none;">
+        <div class="result-header">
+            <span>Resultado final:</span>
+            <div id="finalResultDisplay" class="result-badge">--</div>
+        </div>
+
+        <div class="steps-container">
+            <p class="steps-title">Paso a paso:</p>
+            <div id="stepSubstitution" class="step-card"></div>
+            <div id="stepCalculated" class="step-card step-highlight"></div>
+        </div>
+    </div>
+</div>
+</section>
+
+                <!-- NÚMEROS ENTEROS -->
+                <section class="number-section interactive-section">
+                    <div class="section-text">
+                        <h3>Reducción de términos semejantes.</h3>
+                        <p>
+                            Dos o más términos son semejantes si y solo si comparten exactamente 
+                            la misma parte literal (mismas variables elevadas a los mismos exponentes).                            <br><br>
+                            Esto quiere decir que dos términos algebraicos tienen que tener exactamente la misma parte literal para que podamos sumarlos o restarlos entre sí.
+
+Imaginemos que en la cafetería tenemos 2 manzanas, que representaremos con la letra \(m\)
+y 3 peras, que representaremos con la letra \(p\).
+                            <br>
+Podríamos escribir esa situación como:                            <br>                        </p>
+                    </div>
+                    <br><p>Pero, ¿podemos sumar las 2 manzanas con las 3 peras? <br><br>No.</p>
+ <p><br> Podemos decir que tenemos 5 frutas, pero no podemos decir que tenemos 5 manzanas, ni 5 peras. Son objetos de distinta naturaleza.</p>
+
+<p>Por eso, la expresión: </p>
+<br> <p>\(2m+3p\) </p> <br>
+<p>No puede reducirse más. Las \(m\) y las \(p\) representan cosas diferentes, así que no podemos juntarlas en un solo término. Ahora
+ imaginemos que tenemos:</p>
+<br> <p>\(5m+2p+3m\)</p><br>
+<p>Aquí la situación cambia. Tenemos 5 manzanas, después 2 peras y, además, otras 3 manzanas, no podemos tener "10 manzanoperas". 
+    Las peras siguen siendo peras y no podemos mezclarlas con las manzanas, pero sí podemos 
+    juntar las manzanas entre ellas:</p><br>
+<p>\(5m+3m+2p=8m+2p\)</p><br>
+<p>Es decir, tenemos 5 manzanas y añadimos 3 manzanas: ahora tenemos 8 manzanas, y aparte, 3 peras.</p><br>
+
+<p>Imaginemos otro caso diferente, y jueguemos con los exponentes de la parte literal. </p><br>
+    Pondré un ejemplo un poco loco, para mayor entendimiento, espero que me sigas: 
+    ¿Todos hemos visto esos bananos que vienen pegados, cierto?, esos que son dos bananos en uno. 
+    Representemos esos bananos como \(3b^2\), es decir 3 bananos que son “bananos al cuadrado”, 
+    ya que vienen por dos. Ahora, tenemos otro grupo de bananos normales, este será \(5b\) (Cinco bananos normales), 
+    también como \(b^1\), pero como solo es un banano, no es necesario poner exponente.</p> <br>
+    <p>Ahora nos dan una tarea bastante sencilla: “Sumen todos los bananos.”</p><br>
+    <p>Y aquí podríamos pensar: “Bueno, todos son bananos. Entonces simplemente los sumo \(3b^2 + 5b\), ¿no?”</p><br>
+    
+<p>No tan rápido, esta operación <strong>no</strong> la podemos realizar, porque aunque todos sean 
+bananos, son de diferente tipo, porque unos vienen dobles, y otros no.</p><br>
+<p>Es decir, la expresion queda como: \(3b^2 + 5b\), y no podemos reducirla más. </p><br>
+
+<p>Con esto quiero decir que cuando los exponentes de las 
+variables (letras), son diferentes, no podemos reducir más la operación, aunque sea la misma letra. </p><br>
+
+<p>La letra no es lo único que importa. También debemos fijarnos en los exponentes. </p><br>
+
+<p>Otro caso diferente sería donde algunos exponentes si son iguales: \(5x^3 + 2p + 3x - 2x^3\), donde el resultado es \(3x^3 + 3x + 2p\). Ya que 
+    dentro de esa expresión teniamos términos con el mismo exponente en la parte literal, por lo tanto, se podia reducir.
+</p><br>
+<p></p><br>
+
+<p> I</p>
+
+
+                </section>
+
+                <!-- NÚMEROS RACIONALES -->
+                <section class="number-section interactive-section">
+                    <div class="section-text">
+                        <h3>.</h3>
+                        <p> .
+                            <br><br>
+                            ?
+                            <br><br>
+                            .
+                        </p>
+                    </div>
+
+                <!-- NÚMEROS IRRACIONALES -->
+                <section class="number-section">
+                    <div class="section-text">
+                        <h3>N</h3>
+                        <p>
+                            .
+                            <br><br>
+                            . 
+                            <br><br>
+                           .
+                            <br><br>
+                            .
+                    </div>
+                </section>
+
+                <!-- PROPIEDADES DE LOS REALES -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">Las reglas del juego: propiedades de los números reales</h2>
+                    
+                    <div class="prop-item">
+                        <h3 class="prop-title">A. Propiedad conmutativa</h3>
+                        <p>El orden de los factores no altera el resultado.</p>
+                        <div class="math-box">
+                            <p>Suma: $3 + 5 = 5 + 3$</p>
+                            <p>Multiplicación: $4 \cdot 2 = 2 \cdot 4$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">B. Propiedad asociativa</h3>
+                        <p>El modo de agrupar los números no varía el resultado.</p>
+                        <div class="math-box">
+                            <p>Suma: $(2 + 3) + 4 = 2 + (3 + 4) = 9$</p>
+                            <p>Multiplicación: $(2 \cdot 3) \cdot 4 = 2 \cdot (3 \cdot 4) = 24$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">C. Elemento neutro</h3>
+                        <div class="math-box">
+                            <p>Suma (0): $7 + 0 = 7$</p>
+                            <p>Multiplicación (1): $7 \cdot 1 = 7$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">D. Elemento inverso</h3>
+                        <div class="math-box">
+                            <p>Inverso aditivo: $5 + (-5) = 0$</p>
+                            <p>Inverso multiplicativo: $4 \cdot \frac{1}{4} = 1$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">E. Propiedad distributiva</h3>
+                        <div class="math-box">
+                            <p>$3 \cdot (2 + 4) = 3 \cdot 2 + 3 \cdot 4 = 18$</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: EL VALOR ABSOLUTO -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">El valor absoluto</h2>
+                    
+                    <p>Imagina que estás parado en el centro de tu ciudad.</p>
+                    <p>Si caminas 5 kilómetros hacia el norte, has recorrido 5 kilómetros.</p>
+                    <p>Si caminas 5 kilómetros hacia el sur, sigues habiendo recorrido 5 kilómetros.</p>
+                    <p>No recorriste “menos cinco” kilómetros. La dirección cambió, pero la distancia recorrida sigue siendo 5.</p>
+                    
+                    <p>En matemáticas, la distancia entre un número y el cero se llama <strong>valor absoluto</strong>.</p>
+                    <p>Lo representamos utilizando dos barras verticales:</p>
+                    
+                    <div class="math-box highlight">
+                        <p>$$|-5|=5$$</p>
+                    </div>
+
+                    <p>La distancia entre 5 y 0 también es 5:</p>
+                    <div class="math-box highlight">
+                        <p>$$|5|=5$$</p>
+                    </div>
+
+                    <p>Por lo tanto:</p>
+                    <div class="math-box highlight">
+                        <p>$$|-5|=|5|=5$$</p>
+                    </div>
+
+                    <p>El valor absoluto mide distancia, y una distancia no puede ser negativa. Por eso, el valor absoluto siempre es positivo o igual a cero.</p>
+                    
+                    <blockquote>
+                        <p><em>Quizá lo hayas escuchado explicado de una forma más sencilla:</em><br>
+                        <strong>“¿Cuántos saltos necesitas dar para llegar al 0?”</strong><br>
+                        Esa idea funciona bastante bien para empezar a visualizarlo.</p>
+                    </blockquote>
+                </section>
+                <!-- SECCIÓN: CUESTIONARIO INTERACTIVO -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">🧠 Desafío AstroMates: Pon a prueba tus conocimientos</h2>
+                    <p class="section-desc">Responde a las siguientes preguntas para comprobar cuánto has aprendido sobre los números reales y sus propiedades.</p>
+
+                    <div class="quiz-container">
+                        <!-- Pregunta 1 -->
+
+<div class="quiz-question" id="q1">
+<p class="question-text">
+    <strong>1.</strong> Tenemos la expresión
+    \(7x^2-3x^2+2x^2\).
+    ¿Por qué podemos reducir estos términos?
+</p>
+
+<div class="quiz-options">
+
+    <label class="option-label">
+        <input type="radio" name="q1" value="a">
+        A) Porque todos tienen la misma parte literal, \(x^2\).
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q1" value="b">
+        B) Porque todos los términos tienen números diferentes.
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q1" value="c">
+        C) Porque cualquier término algebraico puede sumarse con otro.
+    </label>
+
+</div>
+
+</div>
+
+<!-- Pregunta 2 -->
+
+<div class="quiz-question" id="q2">
+<p class="question-text">
+    <strong>2.</strong> Si tenemos
+    \(x^2 * x^3\),
+    ¿cuál es el resultado y por qué?
+</p>
+
+<div class="quiz-options">
+
+    <label class="option-label">
+        <input type="radio" name="q2" value="a">
+        A) \(x^6\), porque multiplicamos los exponentes.
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q2" value="b">
+        B) \(x^5\), porque estamos juntando dos factores \(x\) con otros tres.
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q2" value="c">
+        C) \(2x^3\), porque debemos sumar los exponentes y multiplicar las bases.
+    </label>
+
+</div>
+
+</div>
+
+<!-- Pregunta 3 -->
+
+<div class="quiz-question" id="q3">
+
+<p class="question-text">
+    <strong>3.</strong> ¿Cuál es el resultado de
+    \((2x-3)(x^2+4x-1)\)?
+</p>
+
+<div class="quiz-options">
+
+    <label class="option-label">
+        <input type="radio" name="q3" value="a">
+        A) \(2x^3+5x^2-14x+3\)
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q3" value="b">
+        B) \(2x^3+8x^2-2x-3\)
+    </label>
+
+    <label class="option-label">
+        <input type="radio" name="q3" value="c">
+        C) \(2x^3+5x^2-2x-3\)
+    </label>
+
+</div>
+
+</div>
+
+
+                        <div class="quiz-btn-wrapper">
+                            <button type="button" id="btnCheckQuiz" class="astromates-btn-quiz">
+                                <span>🚀 Comprobar Respuestas</span>
+                            </button>
+                        </div>
+                        
+                        <div id="quizResult" class="quiz-result-box" style="display: none;"></div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN DE COMENTARIOS -->
+                <section class="comments-section">
+                    <div class="comments-header">
+                        <h2>💬 Comunidad y Comentarios</h2>
+                        <p>¿Tienes dudas o quieres compartir algo sobre los números reales? ¡Déjanos tu mensaje!</p>
+                    </div>
+
+                    <form id="commentForm" class="comment-card-form">
+                        <div class="input-group">
+                            <input type="text" id="commentAuthor" placeholder="Tu nombre o alias..." required>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="commentText" rows="3" placeholder="Escribe tu duda o reflexión..." required></textarea>
+                        </div>
+                        <button type="submit" class="comment-submit-btn">
+                            <span>Publicar Comentario</span> 🚀
+                        </button>
+                    </form>
+
+                    <div class="comments-feed" id="commentsList">
+                        <div class="comment-item">
+                            <div class="comment-avatar">👤</div>
+                            <div class="comment-body">
+                                <div class="comment-meta">
+                                    <span class="comment-user">AstroFan</span>
+                                    <span class="comment-date">Hace un momento</span>
+                                </div>
+                                <p class="comment-content">¡Excelente explicación de la propiedad distributiva!</p>
+                            <section class="number-section card-style">
+    <h2 class="section-title">💬 Comunidad y Comentarios</h2>
+    
+    <form id="commentForm" class="comment-form">
+        <input type="text" class="astromates-input" placeholder="Tu nombre o alias" required>
+        <textarea class="astromates-input textarea" rows="3" placeholder="Escribe tu duda o reflexión..." required></textarea>
+        <button type="submit" class="astromates-btn">Publicar Comentario</button>
+    </form>
+
+    <!-- CONTENEDOR DONDE SE CARGARÁN LOS COMENTARIOS -->
+    <div id="commentsList" style="margin-top: 1.5rem;"></div>
+</section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+
+        </main>
+
+        <!-- COLUMNA DERECHA: BUSCADOR Y MÓDULOS -->
+        <aside class="sidebar-right">
+            <div class="widget search-box">
+                <h3>Buscador</h3>
+                <div class="search-form">
+                    <input type="text" placeholder="Buscar tema...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+
+            <div class="widget recent-posts">
+                <h3>Lecciones Relacionadas</h3>
+                <ul class="recent-list">
+                    <li>
+                        <a href="../Conjuntos_numericos/conjuntos-numericos.html">
+                            <strong>Pensamiento Numérico:</strong> El Universo de los Números Reales.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>La Recta Real:</strong> Representación geométrica de los números.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>Aproximaciones Decimales:</strong> Manejo de irracionales en la práctica.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+    
+    <footer class="site-footer">
+        <p>&copy; 2026 AstroMates. Espacio interactivo de formación matemática y científica.</p>
+    </footer>
+
+    <!-- JAVASCRIPT UNIFICADO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise();
+            }
+        });
+    </script>
+
+    <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../server.js"></script>
+    <script src="../../../../menu/menu.js"></script>
+    <script src="scriptsconjuntosnumericos.js"></script>
+</body>
+</html>

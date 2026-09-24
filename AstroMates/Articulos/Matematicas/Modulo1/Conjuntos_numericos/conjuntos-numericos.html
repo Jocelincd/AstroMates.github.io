@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjuntos Numéricos - AstroMates</title>
+    
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Hojas de estilos base -->
+    <link rel="stylesheet" href="../../Styles.css"> <!--Modifica el estilo del menú, lo hace igual al que el principal-->
+    <link rel="stylesheet" href="stylesconjuntosnumericos.css">
+    <link rel="stylesheet" href="../../../../menu/header_footer.css">
+    <link rel="stylesheet" href="../../../Global/article_global.css">
+    <link rel="stylesheet" href="../../../../menu/menu.css">
+    
+    
+    <script src="scriptsconjuntosnumericos.js" defer></script>
+
+    <!-- Configuración y carga de MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+
+    <!-- CABECERA DE NAVEGACIÓN -->
+    <header class="header-top">
+        <div class="header-container">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../CSSelements/logo.png" alt="AstroMates Logo" class="header-logo">
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../../../../Principal/index.html" class="active-btn">Inicio</a></li>
+                    <li class="nav-item"><a href="../../../../Principal/index.html#astromates">AstroMates</a></li>
+                    
+                    <li class="nav-item">
+                        <a href="#">Matemáticas ▼</a>
+                        <ul class="dropdown-menu" id="menu-matematicas"></ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#">Física ▼</a>
+                        <ul class="dropdown-menu" id="menu-fisica"></ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">Curiosidades ▼</a>
+                        <ul class="dropdown-menu" id="menu-curiosidades"></ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TÍTULO PRINCIPAL DE LA LECCIÓN -->
+    <section class="banner-title">
+        <h1>Pensamiento Numérico: <br><span>El Universo de los Números Reales</span></h1>
+    </section>
+
+    <!-- ESTRUCTURA PRINCIPAL DE 3 COLUMNAS -->
+    <div class="page-layout">
+        
+        <!-- COLUMNA IZQUIERDA: SOBRE NOSOTROS -->
+        <aside class="sidebar-left">
+            <div class="widget author-box">
+                <h3>Sobre Nosotros</h3>
+                <div class="avatar-circle">
+                    <span class="avatar-icon">👩‍🚀</span>
+                </div>
+                <p class="author-desc">
+                    ¡Hola! Somos el equipo de AstroMates. Transformamos la física y las matemáticas en conceptos claros, intuitivos e interactivos para acompañarte en tu aprendizaje.
+                </p>
+            </div>
+        </aside>
+
+        <!-- COLUMNA CENTRAL: CONTENIDO EDUCATIVO -->
+        <main class="main-content">
+            
+            <article class="lesson-article">
+                <section class="intro-paragraph">
+                    <h2>La gran familia: los números reales</h2>
+                    <p>
+                        Antes de sumergirnos en fórmulas complejas, diagramas y una base matemática un poco más rigurosa
+                        —hablo de un poco, no se asusten—, es importante establecer un orden entre todos esos conceptos
+                        que necesitamos conocer.
+                    </p>
+
+                    <p>
+                        A todos nos pasó que, cuando aprendimos a contar, la profesora nos dijo que a Pablo,
+                        quien solo tenía 3 manzanas, no podíamos quitarle 9, porque 9 es mayor que 3.
+                        Luego descubriste que Pablo tenía una deuda de 6 manzanas (-6) y te diste cuenta
+                        de que te habían mentido durante todo tu corto tiempo de vida.(No te preocupes, compartimos esa decepción).                   </p>
+
+                    <p>
+                        Después llegaron una mentira tras otra: decimales, fracciones, racionales,
+                        irracionales... Si todavía no los conoces del todo, no pasa nada.
+                    </p>
+
+                    <p>
+                        Pero antes de continuar, hay una idea fundamental que debemos tener presente:
+                        <strong>Los números surgen de la necesidad.</strong>
+                    </p>
+
+                    <p>
+                        Y más adelante veremos exactamente a qué nos referimos con esto.
+                    </p>
+                </section>
+
+                <!-- NÚMEROS NATURALES -->
+                <section class="number-section">
+                    <div class="section-text">
+                        <h3>Números Naturales ($\mathbb{N}$)</h3>
+                        <p>
+                            Son los números que utilizamos para contar: 1, 2, 3, 4, 5...
+                            <br><br>
+                            Son números exactos y forman un conjunto infinito. Surgieron de una necesidad bastante intuitiva: poder contar y cuantificar las unidades de aquello que tenemos.
+                            <br><br>
+                            Por ejemplo, imagina a un pastor contando sus ovejas: una, dos, tres, cuatro... Ahí tienes una de las ideas más básicas detrás de los números naturales.
+                            <br><br>
+                            <em>Nota: dependiendo de la convención utilizada, el 0 también puede incluirse dentro de los números naturales. Aquí trabajaremos con la convención $\mathbb{N} = \{1, 2, 3, \ldots\}$.</em>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- NÚMEROS ENTEROS -->
+                <section class="number-section interactive-section">
+                    <div class="section-text">
+                        <h3>Números Enteros ($\mathbb{Z}$)</h3>
+                        <p>
+                            Los números enteros amplían el conjunto de los naturales. Incluyen los números positivos, el cero y los números negativos:
+                            <br><br>
+                            ... -4, -3, -2, -1, 0, 1, 2, 3, 4...
+                            <br><br>
+                            A diferencia de los naturales, ahora podemos representar cantidades menores que cero. Esto nos permite describir magnitudes que pueden encontrarse en sentidos opuestos, como temperaturas bajo cero, distancias por debajo del nivel del mar o, por supuesto, el dinero que te debe tu amigo.
+                            <br><br>
+                            Al igual que los naturales, los enteros son exactos y forman un conjunto infinito.
+                        </p>
+                    </div>
+                    
+                    <div class="interactive-box">
+                        <h4>Explorador de Recta Numérica</h4>
+                        <div class="number-line-container">
+                            <div class="number-line" id="numberLine"></div>
+                        </div>
+                        <div class="line-controls">
+                            <button id="btnLess" class="ctrl-btn">- Desplazar a la izquierda</button>
+                            <span id="currentValDisplay">Valor seleccionado: <strong>0</strong></span>
+                            <button id="btnMore" class="ctrl-btn">Desplazar a la derecha +</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NÚMEROS RACIONALES -->
+                <section class="number-section interactive-section">
+                    <div class="section-text">
+                        <h3>Números Racionales ($\mathbb{Q}$)</h3>
+                        <p>
+                            Los números racionales son aquellos que pueden expresarse como el cociente de dos números enteros, es decir, de la forma $a/b$. Dentro de los racionales encontramos las fracciones, pero también los números decimales exactos o periódicos.
+                            <br><br>
+                            Imagina que saliste a comer con tu mejor amigo. Pidieron una pizza, pero el chef estaba distraído y olvidó cortarla. Ahora tienen un problema importante: ¿cómo la dividen para que a cada uno le corresponda la misma cantidad?
+                            <br><br>
+                            Deciden partirla por la mitad. Cada uno recibe: $1/2$ (Una de dos partes de la pizza). Pero también podrían dividirla en 4, 8, 10 o cualquier otra cantidad de partes iguales. Si tú comes 3 de esas 8 partes, habrás comido: $3/8$.
+                            <br><br>
+                            Aquí aparece justamente un número racional: estamos expresando una cantidad como una proporción entre dos números enteros. En una fracción como $3/8$, el 8 indica en cuántas partes iguales se ha dividido la unidad, mientras que el 3 indica cuántas de esas partes estamos tomando.
+                        </p>
+                    </div>
+
+                    <div class="interactive-box">
+                        <h4>Simulador de Proporción Racional (a/b)</h4>
+                        <div class="fraction-sim-container">
+                            <canvas id="fractionCanvas" width="200" height="200"></canvas>
+                            
+                            <div class="fraction-controls">
+                                <div class="control-group">
+                                    <label for="numA">Numerador (a): <span id="valA">3</span></label>
+                                    <input type="range" id="numA" min="1" max="12" value="3">
+                                </div>
+                                <div class="control-group">
+                                    <label for="denB">Denominador (b): <span id="valB">4</span></label>
+                                    <input type="range" id="denB" min="1" max="12" value="4">
+                                </div>
+                                <div class="control-group">
+                                    <label for="circleColor">Color del sector:</label>
+                                    <input type="color" id="circleColor" value="#ffb800">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NÚMEROS IRRACIONALES -->
+                <section class="number-section">
+                    <div class="section-text">
+                        <h3>Números Irracionales ($\mathbb{I}$)</h3>
+                        <p>
+                            Y aquí aparecen los números que, aparentemente, se niegan a seguir las reglas de los anteriores.
+                            <br><br>
+                            Los números irracionales son aquellos que no pueden expresarse como el cociente de dos números enteros. Su representación decimal es infinita y no periódica.
+                            <br><br>
+                            Algunos ejemplos famosos son: $\pi$, $e$ y $\sqrt{2}$.
+                            <br><br>
+                            Imagina que tienes un cuadrado cuyos lados miden exactamente 1 unidad. Si quieres calcular la longitud de su diagonal, utilizamos el teorema de Pitágoras y nos queda $\sqrt{2}$. El problema es que $\sqrt{2}$ no puede escribirse como una fracción formada por dos números enteros. Su expresión decimal comienza así: $1.41421356237\ldots$ y continúa indefinidamente sin repetir un patrón.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- PROPIEDADES DE LOS REALES -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">Las reglas del juego: propiedades de los números reales</h2>
+                    
+                    <div class="prop-item">
+                        <h3 class="prop-title">A. Propiedad conmutativa</h3>
+                        <p>El orden de los factores no altera el resultado.</p>
+                        <div class="math-box">
+                            <p>Suma: $3 + 5 = 5 + 3$</p>
+                            <p>Multiplicación: $4 \cdot 2 = 2 \cdot 4$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">B. Propiedad asociativa</h3>
+                        <p>El modo de agrupar los números no varía el resultado.</p>
+                        <div class="math-box">
+                            <p>Suma: $(2 + 3) + 4 = 2 + (3 + 4) = 9$</p>
+                            <p>Multiplicación: $(2 \cdot 3) \cdot 4 = 2 \cdot (3 \cdot 4) = 24$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">C. Elemento neutro</h3>
+                        <div class="math-box">
+                            <p>Suma (0): $7 + 0 = 7$</p>
+                            <p>Multiplicación (1): $7 \cdot 1 = 7$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">D. Elemento inverso</h3>
+                        <div class="math-box">
+                            <p>Inverso aditivo: $5 + (-5) = 0$</p>
+                            <p>Inverso multiplicativo: $4 \cdot \frac{1}{4} = 1$</p>
+                        </div>
+                    </div>
+
+                    <div class="prop-item">
+                        <h3 class="prop-title">E. Propiedad distributiva</h3>
+                        <div class="math-box">
+                            <p>$3 \cdot (2 + 4) = 3 \cdot 2 + 3 \cdot 4 = 18$</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: EL VALOR ABSOLUTO -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">El valor absoluto</h2>
+                    
+                    <p>Imagina que estás parado en el centro de tu ciudad.</p>
+                    <p>Si caminas 5 kilómetros hacia el norte, has recorrido 5 kilómetros.</p>
+                    <p>Si caminas 5 kilómetros hacia el sur, sigues habiendo recorrido 5 kilómetros.</p>
+                    <p>No recorriste “menos cinco” kilómetros. La dirección cambió, pero la distancia recorrida sigue siendo 5.</p>
+                    
+                    <p>En matemáticas, la distancia entre un número y el cero se llama <strong>valor absoluto</strong>.</p>
+                    <p>Lo representamos utilizando dos barras verticales:</p>
+                    
+                    <div class="math-box highlight">
+                        <p>$$|-5|=5$$</p>
+                    </div>
+
+                    <p>La distancia entre 5 y 0 también es 5:</p>
+                    <div class="math-box highlight">
+                        <p>$$|5|=5$$</p>
+                    </div>
+
+                    <p>Por lo tanto:</p>
+                    <div class="math-box highlight">
+                        <p>$$|-5|=|5|=5$$</p>
+                    </div>
+
+                    <p>El valor absoluto mide distancia, y una distancia no puede ser negativa. Por eso, el valor absoluto siempre es positivo o igual a cero.</p>
+                    
+                    <blockquote>
+                        <p><em>Quizá lo hayas escuchado explicado de una forma más sencilla:</em><br>
+                        <strong>“¿Cuántos saltos necesitas dar para llegar al 0?”</strong><br>
+                        Esa idea funciona bastante bien para empezar a visualizarlo.</p>
+                    </blockquote>
+                </section>
+
+                <!-- SECCIÓN: LA RECTA NUMÉRICA CON SIMULADOR DE ZOOM -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">La recta numérica: visualizando el infinito</h2>
+                    
+                    <p>Ahora tenemos una gran cantidad de números y necesitamos imaginar cómo conviven todos ellos.</p>
+                    <p>Para eso utilizamos la recta numérica.</p>
+                    <p>Imagina una línea horizontal que se extiende indefinidamente en ambas direcciones. En el centro colocamos un punto que llamamos 0, nuestro origen.</p>
+                    
+                    <p>A partir de ahí:</p>
+                    <ul>
+                        <li>Hacia la derecha colocamos los números positivos: $1, 2, 3, 4, \ldots$</li>
+                        <li>Hacia la izquierda colocamos los números negativos: $-1, -2, -3, -4, \ldots$</li>
+                    </ul>
+
+                    <p>Pero aquí viene una de las características más interesantes de los números reales.</p>
+                    <p><strong>La recta real no tiene huecos.</strong></p>
+                    <p>En matemáticas, esta característica está relacionada con una propiedad llamada <strong>completitud</strong>.</p>
+                    
+                    <p>Entre 1 y 2, por ejemplo, no encontramos simplemente unos cuantos números:</p>
+                    <div class="math-box">
+                        <p>$1.1, \quad 1.25, \quad 1.4142..., \quad 1.5, \quad 1.75...$</p>
+                    </div>
+
+                    <p>Hay infinitos números entre ellos. Y no solo encontramos números racionales. También aparecen números irracionales como $\sqrt{2} \approx 1.41421356...$</p>
+
+                    <!-- SIMULADOR INTERACTIVO DE ZOOM EN LA RECTA -->
+                    <div class="interactive-box zoom-simulator">
+                        <h3 class="sim-title">🔍 Explorador del Infinito: Zoom en la Recta Real</h3>
+                        <p class="sim-desc">Usa los botones para acercarte entre 1 y 2 y observar cómo aparecen más niveles de precisión.</p>
+                        
+                        <canvas id="zoomLineCanvas" width="600" height="120"></canvas>
+                        
+                        <div class="zoom-controls">
+                            <button type="button" id="btnZoomOut" class="astromates-btn-secondary">➖ Alejar</button>
+                            <span id="zoomLevelDisplay">Nivel de Zoom: <strong>1x</strong></span>
+                            <button type="button" id="btnZoomIn" class="astromates-btn">➕ Acercar (Zoom)</button>
+                        </div>
+                    </div>
+
+                    <p class="closing-note">Cuanto más acercamos la vista, aparecen más números. Y más... Y más... </p>
+
+                <!-- SECCIÓN: ¿PARA QUÉ SIRVE TODO ESTO? -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">¿Y para qué nos sirve todo esto?</h2>
+                    
+                    <p>Podría parecer que estamos perdiendo el tiempo organizando números y aprendiendo propiedades que, en muchos casos, ya utilizamos intuitivamente.</p>
+                    <p>Pero esta estructura es fundamental.</p>
+                    <p>Los números reales y sus propiedades forman una de las bases sobre las que construiremos conceptos mucho más complejos: ecuaciones, funciones, gráficas, geometría, cálculo, física y muchos otros campos.</p>
+                    <p>Cada propiedad que aprendemos aquí es una herramienta más para nuestro kit de resolución de problemas.</p>
+                    
+                </section>
+
+                <!-- SECCIÓN: CUESTIONARIO INTERACTIVO -->
+                <section class="number-section card-style">
+                    <h2 class="section-title">🧠 Desafío AstroMates: Pon a prueba tus conocimientos</h2>
+                    <p class="section-desc">Responde a las siguientes preguntas para comprobar cuánto has aprendido sobre los números reales y sus propiedades.</p>
+
+                    <div class="quiz-container">
+                        <!-- Pregunta 1 -->
+                        <div class="quiz-question" id="q1">
+                            <p class="question-text"><strong>1.</strong> ¿A qué conjunto pertenece el número $\sqrt{2}$?</p>
+                            <div class="quiz-options">
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="a"> A) Números Naturales ($\mathbb{N}$)
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="b"> B) Números Racionales ($\mathbb{Q}$)
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q1" value="c"> C) Números Irracionales ($\mathbb{I}$)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="quiz-question" id="q2">
+                            <p class="question-text"><strong>2.</strong> ¿Qué propiedad de los números reales justifica que $3 \cdot (2 + 4) = 3 \cdot 2 + 3 \cdot 4$?</p>
+                            <div class="quiz-options">
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="a"> A) Propiedad Conmutativa
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="b"> B) Propiedad Distributiva
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q2" value="c"> C) Propiedad Asociativa
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="quiz-question" id="q3">
+                            <p class="question-text"><strong>3.</strong> ¿Cuál es el resultado de evaluar la expresión $|-8| + |3|$?</p>
+                            <div class="quiz-options">
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="a"> A) $-5$
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="b"> B) $5$
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="q3" value="c"> C) $11$
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-btn-wrapper">
+                            <button type="button" id="btnCheckQuiz" class="astromates-btn-quiz">
+                                <span>🚀 Comprobar Respuestas</span>
+                            </button>
+                        </div>
+                        
+                        <div id="quizResult" class="quiz-result-box" style="display: none;"></div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN DE COMENTARIOS -->
+                <section class="comments-section">
+                    <div class="comments-header">
+                        <h2>💬 Comunidad y Comentarios</h2>
+                        <p>¿Tienes dudas o quieres compartir algo sobre los números reales? ¡Déjanos tu mensaje!</p>
+                    </div>
+
+                    <form id="commentForm" class="comment-card-form">
+                        <div class="input-group">
+                            <input type="text" id="commentAuthor" placeholder="Tu nombre o alias..." required>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="commentText" rows="3" placeholder="Escribe tu duda o reflexión..." required></textarea>
+                        </div>
+                        <button type="submit" class="comment-submit-btn">
+                            <span>Publicar Comentario</span> 🚀
+                        </button>
+                    </form>
+
+                    <div class="comments-feed" id="commentsList">
+                        <div class="comment-item">
+                            <div class="comment-avatar">👤</div>
+                            <div class="comment-body">
+                                <div class="comment-meta">
+                                    <span class="comment-user">AstroFan</span>
+                                    <span class="comment-date">Hace un momento</span>
+                                </div>
+                                <p class="comment-content">¡Excelente explicación de la propiedad distributiva!</p>
+                            <section class="number-section card-style">
+    <h2 class="section-title">💬 Comunidad y Comentarios</h2>
+    
+    <form id="commentForm" class="comment-form">
+        <input type="text" class="astromates-input" placeholder="Tu nombre o alias" required>
+        <textarea class="astromates-input textarea" rows="3" placeholder="Escribe tu duda o reflexión..." required></textarea>
+        <button type="submit" class="astromates-btn">Publicar Comentario</button>
+    </form>
+
+    <!-- CONTENEDOR DONDE SE CARGARÁN LOS COMENTARIOS -->
+    <div id="commentsList" style="margin-top: 1.5rem;"></div>
+</section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+
+        </main>
+
+        <!-- COLUMNA DERECHA: BUSCADOR Y MÓDULOS -->
+        <aside class="sidebar-right">
+            <div class="widget search-box">
+                <h3>Buscador</h3>
+                <div class="search-form">
+                    <input type="text" placeholder="Buscar tema...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+
+            <div class="widget recent-posts">
+                <h3>Lecciones Relacionadas</h3>
+                <ul class="recent-list">
+                    <li>
+                        <a href="../Expresiones_algebraicas/Expresiones_algebraicas.html">
+                            <strong>Expresiones alegebráicas: </strong> ¿Números y letras?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>La Recta Real:</strong> Representación geométrica de los números.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>Aproximaciones Decimales:</strong> Manejo de irracionales en la práctica.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+    
+    <footer class="site-footer">
+        <p>&copy; 2026 AstroMates. Espacio interactivo de formación matemática y científica.</p>
+    </footer>
+
+    <!-- JAVASCRIPT UNIFICADO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise();
+            }
+        });
+    </script>
+    <script src="../../../../server.js"></script>
+    <script src="../../../../menu/menu.js"></script>
+    <script src="scriptsconjuntosnumericos.js"></script>
+</body>
+</html>
