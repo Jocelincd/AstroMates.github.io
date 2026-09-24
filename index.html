@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=AstroMates/Principal/index.html">
-  <script type="text/javascript">
-    window.location.href = "AstroMates/Principal/index.html";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroMates - Divulgación de Física y Matemáticas</title>
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    }; 
   </script>
-  <title>Redirigiendo...</title>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <!-- Hoja de Estilos CSS Externa -->
+    <link rel="stylesheet" href="Stylesprincipal.css">
+    <link rel="stylesheet" href="../menu/menu.css">
 </head>
 <body>
-  <p>Redirigiendo... Si no carga automáticamente, <a href="AstroMates/Principal/index.html">haz clic aquí</a>.</p>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: ENCABEZADO Y NAVEGACIÓN -->
+        <header class="hero-section" id="inicio">
+            <!-- Elementos decorativos del fondo -->
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+
+            <!-- Menú de navegación actualizado -->
+            <nav class="navbar">
+  <ul class="nav-list">
+    <!-- Botón Inicio -->
+    <li class="nav-item">
+      <a href="index.html" class="active-btn">Inicio</a>
+    </li>
+
+    <!-- Botón AstroMates -->
+    <li class="nav-item">
+      <a href="#">AstroMates</a>
+    </li>
+
+    <!-- 1. MATEMÁTICAS -->
+    <li class="nav-item">
+      <a href="#">Matemáticas ▼</a>
+      <ul class="dropdown-menu" id="menu-matematicas"></ul>
+    </li>
+
+    <!-- 2. FÍSICA -->
+    <li class="nav-item">
+      <a href="#">Física ▼</a>
+      <ul class="dropdown-menu" id="menu-fisica"></ul>
+    </li>
+
+    <!-- 3. CURIOSIDADES -->
+    <li class="nav-item">
+      <a href="#">Curiosidades ▼</a>
+      <ul class="dropdown-menu" id="menu-curiosidades"></ul>
+    </li>
+  </ul>
+</nav>
+  
+
+            <!-- Contenedor del Logo (Espacio preparado para tu imagen) -->
+            <div class="hero-content">
+                <div class="logo-wrapper">
+                    <!-- Sustituye "tu-logo.png" por la ruta o URL de tu imagen -->
+                    <img src="../CSSelements/logo.png" alt="Logo AstroMates" class="logo-image">
+                </div>
+                <a href="#astromates" class="btn-primary">EXPLORAR LA PLATAFORMA</a>
+            </div>
+        </header>
+
+
+        <!-- SECCIÓN 2: INFORMACIÓN Y PRESENTACIÓN DE ASTROMATES -->
+        <main id="astromates" class="info-section">
+            
+            <!-- Bloque de Presentación Introductoria -->
+            <section class="intro-block">
+                <h1 class="intro-title">Bienvenidos a AstroMates</h1>
+                <p class="intro-text">
+                    AstroMates es una iniciativa académica concebida para transformar el aprendizaje de la física y las matemáticas en una experiencia accesible, rigurosa e interactiva. Nuestra misión es tender un puente entre los fundamentos teóricos y la comprensión intuitiva, permitiendo a los estudiantes desarrollar herramientas analíticas sólidas para interpretar los fenómenos del universo.
+                </p>
+            </section>
+
+            <!-- Puntos Clave con Íconos -->
+            <div class="cards-grid">
+                
+                <!-- Tarjeta 1 -->
+                <article class="info-card">
+                    <div class="info-icon">🔭</div>
+                    <div class="info-text">
+                        <h2>PERSPECTIVA ACADÉMICA CERCANA</h2>
+                        <p>Plataforma impulsada por la visión de una estudiante orientada a acompañar a la comunidad educativa. Ofrecemos un entorno de apoyo donde resolver dudas conceptuales y reforzar la confianza analítica.</p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2 -->
+                <article class="info-card center-card">
+                    <div class="info-icon">🤖</div>
+                    <div class="info-text">
+                        <h2>DESDE LO ELEMENTAL A LO ABSTRACTO</h2>
+                        <p>Abordamos de manera estructurada desde los conjuntos numéricos fundamentales hasta el cálculo diferencial e integral, facilitando la asimilación gradual de conceptos complejos.</p>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3 -->
+                <article class="info-card">
+                    <div class="info-icon">⭐</div>
+                    <div class="info-text">
+                        <h2>COMPRENSION MÁS ALLÁ DE LAS FÓRMULAS</h2>
+                        <p>Aspiramos a consolidar las bases conceptuales que hayan quedado rezagadas y a promover la curiosidad científica mediante explicaciones claras, sustituyendo la memorización mecánica por el descubrimiento.</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </main>
+
+
+        <!-- SECCIÓN 3: METODOLOGÍA DE APRENDIZAJE -->
+        <section class="process-section">
+            <h2 class="process-title">NUESTRA METODOLOGÍA:</h2>
+
+            <div class="process-steps">
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-icon">🪐</div>
+                    <p>Consolidación de bases conceptuales e interpretación analítica de principios matemáticos.</p>
+                </div>
+
+                <div class="arrow">▶</div>
+
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-icon">🌕</div>
+                    <p>Experimentación práctica a través de recursos e iteraciones interactivas.</p>
+                </div>
+
+                <div class="arrow">▶</div>
+
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-icon">🚀</div>
+                    <p>Comprensión integral del lenguaje formal que describe el funcionamiento del cosmos.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Archivo de JavaScript Externo -->
+    <script src="app.js"></script>
+    <script src="menuprincipal.js"></script>
 </body>
+
 </html>
